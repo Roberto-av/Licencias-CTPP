@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
 </head>
+
 <body>
     <h2>Registro de Usuario</h2>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div>
             <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name">
         </div>
         <div>
             <label for="email">email:</label>
@@ -30,4 +43,5 @@
         </div>
     </form>
 </body>
+
 </html>

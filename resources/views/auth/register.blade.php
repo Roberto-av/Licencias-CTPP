@@ -24,11 +24,11 @@
         @csrf
         <div>
             <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
         <div>
-            <label for="email">email:</label>
-            <input type="text" id="email" name="email" required>
+            <label for="rpe">rpe:</label>
+            <input type="text" id="rpe" name="rpe" required>
         </div>
         <div>
             <label for="password">Contraseña:</label>

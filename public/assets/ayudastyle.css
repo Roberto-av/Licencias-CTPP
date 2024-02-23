@@ -1,0 +1,48 @@
+
+div[class="ayuda"] {
+    font-size: 40px;
+    color: black;
+}
+
+body {
+    background-color: aliceblue;
+    color: black;
+    margin: 0%;
+    font-size: 40px;
+}
+
+input[type="text"] {
+    padding: 1px;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    border-radius: 80px 5px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin: 0%;
+    justify-items: center;
+    margin-left: 400px;
+    margin-top: 50px;
+    
+}
+
+legend{
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+button {
+    color:black;
+    background-color: blue;
+    padding: 2px;
+    border: solid 2px;
+    width: 90px;
+    height: 30px;
+    margin-left: 800px ;
+    border-radius: 5px 5px 5px 5px;
+    font-style: italic;
+    font-weight: 800;
+}
+

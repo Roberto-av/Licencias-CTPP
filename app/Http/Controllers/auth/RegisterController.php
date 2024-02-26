@@ -14,10 +14,10 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function register(Request $request){
+    public function register(RegisterRequest $request){
          // Intenta crear un nuevo usuario
          try {
-            $user = User::create($request->all());
+            $user = User::create($request->validated());
             
             return redirect('login')->with('success', '¡Usuario registrado exitosamente!');
         } catch (\Exception $e) {

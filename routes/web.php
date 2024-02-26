@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\LicenciasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,22 @@ use App\Http\Controllers\Auth\LogoutController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome')->middleware('auth');
+    return view('panel.principal');
+})->name('principal')->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'show'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'show']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+Route::get('/licencias', [LicenciasController::class, 'show'])->name('licencias')->middleware('auth');
+Route::post('/licencias', [LicenciasController::class, 'store']);
+
+Route::get('/documentos', function () {
+    return view('panel.documentos.index');
+})->name('documentos')->middleware('auth');
+
+

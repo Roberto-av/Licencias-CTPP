@@ -61,10 +61,17 @@ class LicenciasController extends Controller
         return redirect()->route('licencias')->with('success', '¡La licencia se ha guardado correctamente!');
     }
 
-    public function fetchData(Request $request)
+    public function getEmpleados(Request $request)
     {
         $empleados = Empleado::where('departamentos_id', $request->departamento_id)->get();
 
         return response()->json($empleados);
+    }
+
+    public function getEquipos(Request $request)
+    {
+        $equipos = Equipo::where('departamento_id', $request->departamento_id)->get();
+
+        return response()->json($equipos);
     }
 }

@@ -7,9 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LICENCIAS CT PP - @yield('title')</title>
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <meta name="description" content="@yield('meta-description', 'Default meta descripcion')" />
     <style>
         nav {

@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-4">
                     <legend for="Numerolicencia" class="form-label">NÚMERO DE LICENCIA</legend>
-                    <input placeholder="ejemplo: 01-24-123" type="tel" minlength="07" maxlength="11"
+                    <input placeholder="ejemplo: 01-24-123" type="tel" minlength="07" maxlength="9"
                         class="form-control" id="Numerolicencia" name="numero_licencia" required />
                 </div>
                 <div class="col-md-4">
@@ -370,11 +370,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function () {
+        $('#Numerolicencia').on('keypress', function (e){
+            var input = document.getElementById("Numerolicencia");
+
+            if([2,5].includes(input.value.length) && e.which != 8){
+                input.value = input.value + "-";
+            }
+
+        });
+
         $('#DepartamentoSolicitante').on('change', function () {
             var idDepa = this.value;
             $("#SeConcede").html('');
+            $("#Equipo").html('');
+
             $.ajax({
-                url: '{{route('fetchData')}}',
+                url: '{{route('getEmpleados')}}',
                 type: "get",
                 data: {
                     departamento_id: idDepa,
@@ -385,6 +396,22 @@
                     $("#SeConcede").html('<option selected disabled value="">SELECCIONE...</option>');
                     $.each(result, function (key, value) {
                         $("#SeConcede").append('<option value="' + value.id + '">' + value.nombre + '</option>');
+                    });
+                }
+            });
+
+            $.ajax({
+                url: '{{route('getEquipos')}}',
+                type: "get",
+                data: {
+                    departamento_id: idDepa,
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function (result) {
+                    $("#Equipo").html('<option selected disabled value="">SELECCIONE...</option>');
+                    $.each(result, function (key, value) {
+                        $("#Equipo").append('<option value="' + value.id + '">' + value.name + '</option>');
                     });
                 }
             });

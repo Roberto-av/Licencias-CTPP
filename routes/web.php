@@ -39,4 +39,5 @@ Route::get('/documentos', function () {
 
 Route::get('/test', [TestController::class, 'index']);
 
-Route::get('fetch-data', [LicenciasController::class, 'fetchData'])->name('fetchData');
+Route::get('get-empleados', [LicenciasController::class, 'getEmpleados'])->name('getEmpleados');
+Route::get('get-equipos', [LicenciasController::class, 'getEquipos'])->name('getEquipos');

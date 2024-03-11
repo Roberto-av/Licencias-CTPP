@@ -32,8 +32,7 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/licencias', [LicenciasController::class, 'show'])->name('licencias')->middleware('auth');
 Route::post('/licencias', [LicenciasController::class, 'store']);
 
-Route::get('/documentos', function () {
-    return view('panel.documentos.index');
-})->name('documentos')->middleware('auth');
+Route::get('/documentos', [LicenciasController::class, 'showLicences'])->name('documentos')->middleware('auth');
 
-
+Route::get('/status', [LicenciasController::class, 'index'])->name('status')->middleware('auth');
+Route::put('/status/{id}/update', [LicenciasController::class, 'update'])->name('status.update')->middleware('auth');

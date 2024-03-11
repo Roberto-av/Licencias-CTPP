@@ -70,6 +70,15 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="col-md-4">
+                    <legend for="centro_gestor" class="form-label">CENTRO DE GESTOR:</legend>
+                    <select class="form-select" id="centro_gestor" name="centro_gestor" required>
+                        <option selected disabled value="">SELECCIONE...</option>
+                        <option value="GT41">GT41</option>
+                        <option value="GR42">GR42</option>
+                        <option value="GR44">GR44</option>
+                    </select>
+                </div>
                 <div class="col-md-6">
                     <legend for="Equipo" class="form-label">EQUIPO</legend>
                     <select class="form-select" id="Equipo" name="equipo_id" required>

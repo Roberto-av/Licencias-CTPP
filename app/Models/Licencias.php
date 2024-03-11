@@ -15,6 +15,7 @@ class Licencias extends Model
         'departamento_id',
         'equipo_id',
         'user_id',
+        'centro_gestor',
         'comentario_trabajo_realizar',
         'comentario_especifico',
         'energia_equipo',

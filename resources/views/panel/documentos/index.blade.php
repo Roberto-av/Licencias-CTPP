@@ -78,7 +78,7 @@
                         <td>{{ $licencia->id }}</td>
                         <td>{{ $licencia->tipo_licencia }}</td>
                         <td>{{ $licencia->numero_licencia }}</td>
-                        <td>{{ $licencia->equipo->centro_gestor }}</td>
+                        <td>{{ $licencia->centro_gestor }}</td>
                         <td>{{ $licencia->unidad }}</td>
                         <td>{{ $licencia->departamento->nombre }}</td>
                         <td>{{ $licencia->jefeDeTurno->nombre }}</td>

@@ -37,6 +37,7 @@ class LicenciasController extends Controller
             'jefe_de_turno_id',
             'empleado_id',
             'equipo_id',
+            'centro_gestor',
             'comentario_trabajo_realizar',
             'comentario_especifico',
             'energia_equipo',

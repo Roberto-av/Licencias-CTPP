@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -8,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+<body>
     @extends('layouts.app')
     @section('content')
         <br>
@@ -56,8 +59,7 @@
                 <div class="col-md-4">
                     <legend for="QuienConcede" class="form-label">QUIEN CONCEDE:</legend>
                     <input type="hidden" name="jefe_de_turno_id" value="{{ $jefeDeTurno->id }}">
-                    <input class="form-select" type="text" id="QuienConcede"
-                        value="{{ $jefeDeTurno->nombre }}" readonly>
+                    <input class="form-select" type="text" id="QuienConcede" value="{{ $jefeDeTurno->nombre }}" readonly>
                 </div>
                 <div class="col-md-4">
                     <legend for="SeConcede" class="form-label">SE CONCEDE A:</legend>
@@ -73,7 +75,7 @@
                     <select class="form-select" id="Equipo" name="equipo_id" required>
                         <option selected disabled value="">SELECCIONE...</option>
                         @foreach ($equipos as $equipo)
-                            <option value="{{ $equipo->id }}">{{ $equipo->name }}</option>
+                            <option value="{{ $equipo->id }}">{{ $equipo->denominacion }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -97,52 +99,65 @@
                     </div>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox01" name="energia_equipo[]" value="E L Eléctrica">
+                            <input type="checkbox" id="checkbox01" name="energia_equipo" value="E L Eléctrica">
                             <label for="checkbox01">E L ELÉCTRICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox02" name="energia_equipo[]" value="ME Mecanica">
+                            <input type="checkbox" id="checkbox02" name="energia_equipo" value="ME Mecanica">
                             <label for="checkbox02">ME MECÁNICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox03" name="energia_equipo[]" value="C I Cinética">
+                            <input type="checkbox" id="checkbox03" name="energia_equipo" value="C I Cinética">
                             <label for="checkbox03">C I CINÉTICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox04" name="energia_equipo[]" value="NE Neumática">
+                            <input type="checkbox" id="checkbox04" name="energia_equipo" value="NE Neumática">
                             <label for="checkbox04">NE NEUMÁTICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox05" name="energia_equipo[]" value="C A Calorífica">
+                            <input type="checkbox" id="checkbox05" name="energia_equipo" value="C A Calorífica">
                             <label for="checkbox05">C A CALORÍFICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox06" name="energia_equipo[]" value="H I Hidráulica">
+                            <input type="checkbox" id="checkbox06" name="energia_equipo" value="H I Hidráulica">
                             <label for="checkbox06">H I HIDRÁULICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox07" name="energia_equipo[]" value="QU Química">
+                            <input type="checkbox" id="checkbox07" name="energia_equipo" value="QU Química">
                             <label for="checkbox07">QU QUÍMICA</label>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <input type="checkbox" id="checkbox08" name="energia_equipo[]" value="PO Potencial">
+                            <input type="checkbox" id="checkbox08" name="energia_equipo" value="PO Potencial">
                             <label for="checkbox08">PO POTENCIAL</label>
                         </li>
                     </ul>
+                    <script>
+                        const checkboxes = document.querySelectorAll('.energia_equipo');
+
+                        checkboxes.forEach(checkbox => {
+                            checkbox.addEventListener('click', function() {
+                                checkboxes.forEach(otherCheckbox => {
+                                    if (otherCheckbox !== checkbox) {
+                                        otherCheckbox.checked = false;
+                                    }
+                                });
+                            });
+                        });
+                    </script>
                 </div>
                 <div class="container">
                     <div class="row">

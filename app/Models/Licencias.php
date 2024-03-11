@@ -21,6 +21,7 @@ class Licencias extends Model
         'maniobrar',
         'asegurar',
         'bloquear',
+        'status' => 'NO LIBERADO',
     ];
 
     public function jefeDeTurno()

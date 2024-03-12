@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>print</title>
+    <style>
+        body {
+            margin-top: 20px;
+            border: initial;
+            margin-right: 20PX;
+
+        }
+
+        div {
+            float: left;
+            font-size: small;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin: 20px;
+            padding: 5px;
+        }
+
+        p {
+            width: 100%;
+            margin: 8px 40px;
+            color: rgb(0, 0, 0);
+            font-size: small;
+            text-align: left;
+            padding: 8px;
+
+        }
+
+        label {
+            font-weight: 600;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p> NÚMERO DE LICENCIA: <label>01-24-123</label> UNIDAD: <label>U1</label></p>
+    <p> FECHA DE CONCESIÓN: <label>11/03/24</label> HORA: <label>9:48HRS</label></p>
+    <p>QUIÉN CONCEDE: <label>CESAR BELTRAN BENECH</label></p>
+    <p> DEPARTAMENTO SOLICITANTE: <label>OPERACION</label></p>
+    <p>SE CONCEDE A: <label>RICARDO ROMAN MORENO</label></p>
+    <p>EQUIPO: <label>CALDERA</label></p>
+    <p>TRABAJO A REALIZAR: <label>LIMPIEZA A CALDERA</label></p>
+    <p>INSTRUCCIONES ESPECIFICAS: <label>SE LIMPIARA LA CALDERA POR EL INTERIOR Y EXTERIOR LAS ZONAS A Y ZONA B</label>
+    </p>
+    <p>ENERGIA A UTILIZAR: <label>ELECTRICA</label></p>
+    <div class="row">
+        <div class="col">
+            <legend for="maniobrar">MANIOBRAR</legend>
+            <li>
+                <label>1. ABRIR</label>
+            </li>
+        </div>
+        <div class="col">
+            <legend for="asegurar">ASEGURAR</legend>
+            <li>
+                <label>7. ATERRIZAR</label>
+            </li>
+        </div>
+        <div class="col">
+            <legend for="bloquear">BLOQUEAR</legend>
+            <li>
+                <label>19. ACORDONAR</label>
+            </li>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -14,7 +14,6 @@
             width: auto;
             height: 50px;
             background-color: #010203af;
-            border-radius: 8px;
             font-size: 0;
         }
         body {

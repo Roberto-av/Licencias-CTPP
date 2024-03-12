@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('jefes_de_turno', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre')->nullable(false);
-            $table->string('rpe')->nullable(false)->unique();
+            $table->string('rpe', 5)->nullable(false)->unique();
             $table->string('correo')->nullable()->unique();
             $table->unsignedBigInteger('departamento_id');
             $table->foreign('departamento_id')->references('id')->on('departamentos');

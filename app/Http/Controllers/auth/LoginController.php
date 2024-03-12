@@ -20,7 +20,7 @@ class LoginController extends Controller
         $credentials = $request->only('rpe', 'password');
 
         if (!Auth::attempt($credentials)) {
-            Log::warning('Inicio de sesión fallido con el correo: ' . $request->rpe);
+            Log::warning('Inicio de sesión fallido con el RPE: ' . $request->rpe);
             return redirect()->route('login')->withErrors(['error' => 'Las credenciales proporcionadas son incorrectas.']);
         }
         
@@ -28,7 +28,7 @@ class LoginController extends Controller
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);
         
-        Log::info('Se ha iniciado sesión con el correo: ' . $request->rpe);
+        Log::info('Se ha iniciado sesión con el RPE: ' . $request->rpe);
         
         return $this->authenticated();
     }

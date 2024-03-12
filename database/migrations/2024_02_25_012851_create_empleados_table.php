@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre')->nullable(false);
-            $table->string('rpe')->nullable(false)->unique();
+            $table->string('rpe', 5)->nullable(false)->unique();
             $table->string('correo')->nullable()->unique();
             $table->unsignedBigInteger('departamentos_id');
             $table->foreign('departamentos_id')->references('id')->on('departamentos');
-            $table->string('puesto')->nullable();
+            $table->string('puesto', 30)->nullable();
             $table->timestamps();
         });
     }
